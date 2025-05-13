@@ -15,8 +15,12 @@ def fib(num, memo={}):
 
 
 start_time = time.time()
+
 result = fib(40)
+
 end_time = time.time()
 print(result)
+
 elapsed_time_ms = (end_time - start_time) * 1000
+
 print(f"Time taken: {elapsed_time_ms:.2f} ms")
