@@ -152,4 +152,41 @@ text = "Hello, World!"
 print(text.lower())  # 'hello, world!'
 ```
 
----
+## Binary Search
+
+```python
+def search_insert(nums, target):
+    lo = 0
+    hi = len(nums) - 1
+    while lo <= hi:
+        mid = (hi + lo) // 2
+        mid_val = nums[mid]
+        if target == mid_val:
+            return mid
+        elif target > mid_val:
+            lo = mid + 1
+        else:
+            hi = mid - 1
+    return -1
+
+
+res = search_insert([1, 2, 3, 4, 5], 10)
+print(res)
+```
+
+The standard way to calculate `mid` in binary search is:
+
+```python
+mid = (left + right) // 2
+```
+
+This is efficient and works well in Python because Python integers can grow arbitrarily large, so integer overflow is not an issue.
+
+**In some other languages** (like C, C++, or Java), using `(left + right) // 2` can cause integer overflow if `left` and `right` are very large. To avoid this, a safer way is:
+
+```python
+mid = left + (right - left) // 2
+```
+
+**In Python**, both methods are equally efficient and safe.  
+There is no more efficient way than this for calculating `mid` in binary search. The main efficiency comes from the binary search algorithm itself, not from how `mid` is calculated.
