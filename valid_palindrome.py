@@ -2,6 +2,7 @@ def is_palindrome(s):
     # Keep only alphanumeric characters and convert to lowercase
     filtered = "".join(char.lower() for char in s if char.isalnum())
     # Check if the filtered string is the same forwards and backwards
+    print(filtered)
     return filtered == filtered[::-1]
 
 

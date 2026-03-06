@@ -14,5 +14,5 @@ def search_insert(nums, target):
     return -1
 
 
-res = search_insert([1, 2, 3, 4, 5], 10)
+res = search_insert([1, 2, 3, 4, 5], 3)
 print(res)
